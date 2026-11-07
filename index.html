@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#160b17">
+
+  <title>AURIXT | Luxury Sound</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+
+  <main class="hero" id="home">
+
+    <div class="hero-background"></div>
+
+    <header class="navbar">
+      <a href="#home" class="logo">AURIXT</a>
+
+      <button
+        class="menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >☰</button>
+
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">HOME</a>
+        <a href="#discover" class="nav-link">DISCOVER</a>
+        <a href="#features" class="nav-link">FEATURES</a>
+        <a href="#support" class="nav-link">SUPPORT</a>
+      </nav>
+
+      <a href="#discover" class="nav-cta">GET STARTED</a>
+    </header>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <section class="hero-copy">
+      <div class="eyebrow">
+        <span>Next-generation Sound Team</span>
+        <span>2026</span>
+      </div>
+
+      <h1>
+        LUXURY<br>
+        <span>SOUND</span>
+      </h1>
+
+      <p class="mobile-description">
+        Experience sound beyond imagination.
+      </p>
+
+      <a href="#discover" class="pill-button">GET ACCESS</a>
+    </section>
+
+    <section class="sound-panel" id="discover">
+      <h2>Suggested Sounds</h2>
+
+      <div class="sound-list">
+
+        <button
+          class="sound-card selected"
+          data-title="End of Beginning"
+          data-artist="Dreaming"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=120&q=80"
+            alt=""
+          >
+
+          <span class="sound-info">
+            <strong>End of Beginning</strong>
+            <small>Dreaming</small>
+          </span>
+
+          <span class="sound-duration">3:20</span>
+          <span class="sound-more">⋮</span>
+        </button>
+
+        <button
+          class="sound-card"
+          data-title="Shape of My Heart"
+          data-artist="Sting"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=120&q=80"
+            alt=""
+          >
+
+          <span class="sound-info">
+            <strong>Shape of My Heart</strong>
+            <small>Sting</small>
+          </span>
+
+          <span class="sound-duration">4:30</span>
+          <span class="sound-more">⋮</span>
+        </button>
+
+        <button
+          class="sound-card"
+          data-title="Ocean Unknown"
+          data-artist="Dune Dreams"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=120&q=80"
+            alt=""
+          >
+
+          <span class="sound-info">
+            <strong>Ocean Unknown</strong>
+            <small>Dune Dreams</small>
+          </span>
+
+          <span class="sound-duration">4:07</span>
+          <span class="sound-more">⋮</span>
+        </button>
+
+      </div>
+    </section>
+
+    <section class="preview-card" id="features">
+      <button class="preview-play" aria-label="Play preview">▶</button>
+
+      <img
+        src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=400&q=85"
+        alt="Music performance"
+      >
+
+      <div class="preview-caption">
+        <strong>VISION. SOUND. EMOTION.</strong>
+        <p>Discover a new dimension of sound.</p>
+      </div>
+    </section>
+
+    <section class="vision-panel" id="support">
+      <div class="vision-copy">
+        <h2>Vision Engine</h2>
+        <p>Powering a new era<br>of audio and interaction.</p>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=400&q=85"
+        alt="Fashion portrait"
+      >
+    </section>
+
+    <div class="now-playing" aria-live="polite">
+      <span class="playing-indicator"></span>
+      <span>NOW SELECTED:</span>
+      <strong id="current-track">End of Beginning</strong>
+    </div>
+
+  </main>
+
+</body>
+</html>

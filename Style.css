@@ -1,0 +1,790 @@
+
+/* =========================
+   Global
+========================= */
+
+:root {
+  --pink: #f42aab;
+  --pink-light: #ff70d1;
+  --purple: #86135f;
+  --white: #fff8fc;
+  --muted: #e5b8d6;
+  --dark: #160b17;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #160b17;
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================
+   Main Hero
+========================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 850px;
+  height: max(760px, calc(100vh - 65px));
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(112, 0, 70, 0.42) 0%,
+      rgba(100, 0, 65, 0.12) 48%,
+      rgba(15, 5, 17, 0.65) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(160, 0, 105, 0.32),
+      rgba(15, 5, 17, 0.12)
+    ),
+    url("girl.jpg")
+    center 35% / cover no-repeat;
+
+  box-shadow: none;
+}
+
+.hero-background {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(235, 15, 150, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(230, 20, 160, 0.12),
+      transparent 60%
+    );
+  pointer-events: none;
+}
+
+.ambient {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.ambient-one {
+  width: 360px;
+  height: 360px;
+  left: 2%;
+  top: 30%;
+  background: rgba(255, 24, 173, 0.25);
+}
+
+.ambient-two {
+  width: 340px;
+  height: 340px;
+  right: 5%;
+  bottom: 0;
+  background: rgba(236, 22, 168, 0.22);
+}
+
+/* =========================
+   Navigation
+========================= */
+
+.navbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 4.2%;
+  min-height: 88px;
+}
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #f3a4df;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-link {
+  padding: 12px 16px;
+  border-radius: 30px;
+  color: #f1a0d5;
+  font-size: 11px;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 62, 185, 0.25);
+  color: white;
+}
+
+.nav-cta,
+.pill-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  background: #fff8fc;
+  color: #6d2457;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-cta {
+  padding: 17px 29px;
+}
+
+.nav-cta:hover,
+.pill-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* =========================
+   Portrait Removed
+========================= */
+
+.main-portrait {
+  display: none;
+}
+
+.woman-image,
+.headphone-overlay {
+  display: none;
+}
+
+/* =========================
+   Hero Copy
+========================= */
+
+.hero-copy {
+  position: absolute;
+  z-index: 2;
+  top: 31%;
+  left: 4.2%;
+  width: 36%;
+}
+
+.eyebrow {
+  display: flex;
+  justify-content: space-between;
+  max-width: 340px;
+  margin-bottom: 15px;
+  color: rgba(255, 226, 246, 0.8);
+  font-size: 11px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(48px, 5.6vw, 78px);
+  font-weight: 400;
+  line-height: 0.99;
+  letter-spacing: -4px;
+}
+
+.hero-copy h1 span {
+  display: block;
+  margin-left: 25px;
+}
+
+.pill-button {
+  margin-top: 28px;
+  min-width: 194px;
+  min-height: 53px;
+  padding: 15px 25px;
+}
+
+.mobile-description {
+  display: none;
+}
+
+/* =========================
+   Suggested Sounds
+========================= */
+
+.sound-panel {
+  position: absolute;
+  z-index: 3;
+  top: 31%;
+  right: 3.2%;
+  width: 22%;
+  max-width: 300px;
+}
+
+.sound-panel h2 {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sound-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sound-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: rgba(111, 14, 82, 0.65);
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.sound-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-3px);
+}
+
+.sound-card.selected {
+  background: rgba(255, 68, 188, 0.42);
+  border-color: rgba(255, 196, 235, 0.3);
+}
+
+.sound-card > img {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sound-info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sound-info strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.sound-info small {
+  color: #edb8dc;
+  font-size: 9px;
+}
+
+.sound-duration {
+  color: #f4c8e5;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.sound-more {
+  font-size: 17px;
+  color: #f4c8e5;
+}
+
+/* =========================
+   Bottom Preview Card
+========================= */
+
+.preview-card {
+  position: absolute;
+  z-index: 3;
+  left: 4.2%;
+  bottom: 8%;
+  width: 300px;
+  max-width: 33%;
+}
+
+.preview-card > img {
+  width: 70%;
+  height: 90px;
+  margin-left: 30%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 11px;
+}
+
+.preview-play {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 30%;
+  height: 90px;
+  border: 0;
+  border-radius: 11px 0 0 11px;
+  background: rgba(93, 16, 77, 0.82);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.preview-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 39px;
+  height: 39px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.preview-play:hover {
+  background: rgba(255, 41, 174, 0.75);
+}
+
+.preview-caption {
+  padding: 12px 4px 0;
+  color: #fff0fa;
+  font-size: 9px;
+}
+
+.preview-caption strong {
+  font-size: 9px;
+  letter-spacing: 0.3px;
+}
+
+.preview-caption p {
+  margin-top: 5px;
+  line-height: 1.6;
+  color: #f3d8e9;
+}
+
+/* =========================
+   Vision Card
+========================= */
+
+.vision-panel {
+  position: absolute;
+  z-index: 3;
+  right: 3.2%;
+  bottom: 10%;
+  width: 180px;
+}
+
+.vision-copy h2 {
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vision-copy p {
+  margin-bottom: 11px;
+  color: #f8d9ed;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.vision-panel > img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 11px;
+  transition: transform 0.4s;
+}
+
+.vision-panel > img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   Selected Track Status
+========================= */
+
+.now-playing {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: max-content;
+  max-width: 90%;
+  color: #fff0fa;
+  font-size: 9px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.now-playing.visible {
+  opacity: 1;
+}
+
+.now-playing strong {
+  font-weight: 600;
+}
+
+.playing-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffb7e5;
+}
+
+/* =========================
+   Responsive: Tablets
+========================= */
+
+@media (max-width: 1050px) and (min-width: 701px) {
+  .hero {
+    min-height: 950px;
+    height: auto;
+    padding-bottom: 30px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .navbar {
+    padding-inline: 4%;
+  }
+
+  .nav-link {
+    padding: 11px 10px;
+    font-size: 10px;
+  }
+
+  .nav-cta {
+    padding: 14px 18px;
+    font-size: 10px;
+  }
+
+  .hero-copy {
+    top: 32%;
+    left: 4.5%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(43px, 6vw, 65px);
+    letter-spacing: -3px;
+  }
+
+  .hero-copy h1 span {
+    margin-left: 20px;
+  }
+
+  .sound-panel {
+    right: 3%;
+    width: 25%;
+  }
+
+  .sound-card {
+    gap: 6px;
+    padding: 5px;
+  }
+
+  .sound-card > img {
+    width: 35px;
+    height: 38px;
+  }
+
+  .sound-info strong {
+    font-size: 9px;
+  }
+
+  .sound-duration {
+    display: none;
+  }
+
+  .preview-card {
+    bottom: 6%;
+    width: 260px;
+  }
+
+  .vision-panel {
+    width: 145px;
+    bottom: 8%;
+  }
+
+  .vision-panel > img {
+    height: 120px;
+  }
+}
+
+/* =========================
+   Responsive: Mobile
+========================= */
+
+@media (max-width: 700px) {
+  .top-bar {
+    min-height: 45px;
+    padding: 0 16px;
+    justify-content: center;
+  }
+
+  .contact-info {
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .contact-info a:first-child,
+  .contact-info a:last-child,
+  .social-links {
+    display: none;
+  }
+
+  .hero {
+    min-height: 900px;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    background-position: center center;
+  }
+
+  .navbar {
+    min-height: 76px;
+    padding: 18px 22px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: 14px;
+  }
+
+  .nav-cta {
+    padding: 12px 14px;
+    font-size: 9px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 67px;
+    left: 18px;
+    right: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    background: rgba(36, 9, 32, 0.96);
+    backdrop-filter: blur(15px);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .hero-copy {
+    top: 13%;
+    left: 7%;
+    width: 86%;
+  }
+
+  .eyebrow {
+    max-width: 280px;
+    font-size: 9px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(43px, 12vw, 64px);
+    letter-spacing: -2px;
+  }
+
+  .hero-copy h1 span {
+    margin-left: 25px;
+  }
+
+  .mobile-description {
+    display: block;
+    margin-top: 13px;
+    font-size: 11px;
+    color: #fff0fa;
+  }
+
+  .pill-button {
+    margin-top: 15px;
+    min-height: 42px;
+    min-width: 145px;
+    font-size: 10px;
+  }
+
+  .sound-panel {
+    top: 60%;
+    left: 6%;
+    right: auto;
+    width: 88%;
+    max-width: none;
+  }
+
+  .sound-panel h2 {
+    font-size: 13px;
+    margin-bottom: 9px;
+  }
+
+  .sound-list {
+    gap: 6px;
+  }
+
+  .sound-card {
+    min-height: 54px;
+    padding: 6px 9px;
+    gap: 10px;
+    background: rgba(56, 8, 43, 0.78);
+  }
+
+  .sound-card > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sound-info strong {
+    font-size: 10px;
+  }
+
+  .sound-info small {
+    font-size: 9px;
+  }
+
+  .sound-duration {
+    display: block;
+    font-size: 9px;
+  }
+
+  .preview-card {
+    left: 6%;
+    bottom: 3%;
+    width: 45%;
+    max-width: none;
+  }
+
+  .preview-card > img,
+  .preview-play {
+    height: 65px;
+  }
+
+  .preview-caption {
+    padding-top: 8px;
+  }
+
+  .preview-caption strong {
+    font-size: 8px;
+  }
+
+  .preview-caption p {
+    font-size: 8px;
+  }
+
+  .preview-play::before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .vision-panel {
+    right: 6%;
+    bottom: 3%;
+    width: 34%;
+  }
+
+  .vision-copy h2 {
+    font-size: 11px;
+  }
+
+  .vision-copy p {
+    font-size: 8px;
+    margin-bottom: 7px;
+  }
+
+  .vision-panel > img {
+    height: 85px;
+  }
+
+  .now-playing {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-cta {
+    padding: 11px 10px;
+    font-size: 8px;
+  }
+
+  .menu-toggle {
+    margin-right: 8px;
+  }
+
+  .hero-copy h1 {
+    font-size: 42px;
+  }
+
+  .sound-duration {
+    display: none;
+  }
+}
